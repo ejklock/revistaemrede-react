@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Container } from './styles';
 import NavBar from '../../components/NavBar';
 import ImageOverTextBanner from '../../components/ImageOverTextBanner';
@@ -13,6 +14,14 @@ import { ReactComponent as Book } from '../../assets/img/logo-revista.svg';
 import Banner from '../../assets/img/ufmt-library-photo-1600.jpg';
 
 const Footerlogos = [Brand, UniRedeLogo];
+const magazines = [
+  '2019 - v.6 n.2',
+  '2019 - v.6 n.1',
+  '2018 - v.5 n.3',
+  '2018 - v.5 n.2',
+  '2018 - v.5 n.1',
+  '2017 - v.4 n.2',
+];
 
 export default function Main() {
   return (
@@ -20,26 +29,16 @@ export default function Main() {
       <NavBar brandImage={Brand} brandText="" />
       <ImageOverTextBanner />
       <SectionGrey Icon={Book} />
+
       <div className="container-fluid">
         <div className="row">
-          <div className="col-md-2">
-            <MagazineCard />
-          </div>
-          <div className="col-md-2">
-            <MagazineCard />
-          </div>
-          <div className="col-md-2">
-            <MagazineCard />
-          </div>
-          <div className="col-md-2">
-            <MagazineCard />
-          </div>
-          <div className="col-md-2">
-            <MagazineCard />
-          </div>
-          <div className="col-md-2">
-            <MagazineCard />
-          </div>
+          {magazines.map(magazine => {
+            return (
+              <div className="col-md-2">
+                <MagazineCard title={magazine} />
+              </div>
+            );
+          })}
         </div>
       </div>
       <Footer logos={Footerlogos} />

@@ -2,12 +2,13 @@ import React from 'react';
 
 import { Container, CardImage, CardBody, CardTitle, Button } from './styles';
 
-export default function MagazineCard() {
+export default function MagazineCard(props) {
+  const { title = '' } = props;
   return (
     <Container>
       <CardImage />
       <CardBody>
-        <CardTitle>ACENO - Revista de Antropologia do Centro-Oeste</CardTitle>
+        <CardTitle>{title}</CardTitle>
         <Button>Acessar Revista</Button>
       </CardBody>
     </Container>

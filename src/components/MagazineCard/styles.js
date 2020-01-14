@@ -41,4 +41,8 @@ export const Button = styled.a`
   font-size: 22px;
   font-family: 'Roboto';
   width: 100%;
+  transition: background 0.3s;
+  &:hover {
+    background: #555;
+  }
 `;
